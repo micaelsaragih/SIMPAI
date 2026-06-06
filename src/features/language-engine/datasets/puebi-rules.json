@@ -1,0 +1,302 @@
+[
+  {
+    "id": "PUEBI-001",
+    "name": "Huruf Kapital Awal Kalimat",
+    "description": "Huruf pertama pada awal kalimat harus menggunakan huruf kapital.",
+    "pattern": "^[a-z]",
+    "flags": "",
+    "replacement": "",
+    "severity": "error",
+    "issueType": "capitalization"
+  },
+  {
+    "id": "PUEBI-002",
+    "name": "Spasi Ganda",
+    "description": "Penggunaan spasi berlebih atau ganda di dalam teks.",
+    "pattern": "\\s{2,}",
+    "flags": "g",
+    "replacement": " ",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-003",
+    "name": "Penulisan Prefiks 'di-' Terpisah",
+    "description": "Prefiks 'di-' yang menyatakan kalimat pasif harus ditulis serangkai dengan kata kerja berikutnya.",
+    "pattern": "\\bdi\\s+(buat|lakukan|teliti|gunakan|analisis|evaluasi|uji|cari|tulis|baca|peroleh|capai|proses|pilih|simpan|hapus|edit|update|muat|unggah|unduh|ambil|kasih|bagi|atur|pikir|paham)\\b",
+    "flags": "gi",
+    "replacement": "di$1",
+    "severity": "error",
+    "issueType": "prefix-suffix"
+  },
+  {
+    "id": "PUEBI-004",
+    "name": "Penulisan Preposisi 'di' Serangkai",
+    "description": "Preposisi 'di' yang menunjukkan keterangan tempat/arah harus ditulis terpisah dengan kata berikutnya.",
+    "pattern": "\\bdi(sini|situ|sana|atas|bawah|samping|dalam|luar|tengah|antara|sebelah|kelas|jurnal|kertas|buku|laboratorium|pusat|wilayah|daerah|negara|kota|desa)\\b",
+    "flags": "gi",
+    "replacement": "di $1",
+    "severity": "error",
+    "issueType": "prefix-suffix"
+  },
+  {
+    "id": "PUEBI-005",
+    "name": "Spasi Sebelum Koma",
+    "description": "Tanda baca koma harus ditulis serangkai dengan kata sebelumnya (tanpa spasi).",
+    "pattern": "\\s+,",
+    "flags": "g",
+    "replacement": ",",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-006",
+    "name": "Tanpa Spasi Setelah Koma",
+    "description": "Tanda baca koma harus diikuti oleh spasi satu ketukan sebelum kata berikutnya.",
+    "pattern": ",(?=[A-Za-z0-9])",
+    "flags": "g",
+    "replacement": ", ",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-007",
+    "name": "Tanpa Spasi Setelah Titik",
+    "description": "Tanda baca titik harus diikuti oleh spasi satu ketukan sebelum kata berikutnya.",
+    "pattern": "\\.(?=[A-Za-z]{2,})",
+    "flags": "g",
+    "replacement": ". ",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-008",
+    "name": "Singkatan 'dll' Tanpa Titik",
+    "description": "Singkatan 'dll' (dan lain-lain) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bdll\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "dll.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-009",
+    "name": "Singkatan 'dsb' Tanpa Titik",
+    "description": "Singkatan 'dsb' (dan sebagainya) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bdsb\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "dsb.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-010",
+    "name": "Singkatan 'dst' Tanpa Titik",
+    "description": "Singkatan 'dst' (dan seterusnya) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bdst\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "dst.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-011",
+    "name": "Singkatan 'dkk' Tanpa Titik",
+    "description": "Singkatan 'dkk' (dan kawan-kawan) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bdkk\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "dkk.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-012",
+    "name": "Spasi Sebelum Tanda Seru/Tanya",
+    "description": "Tanda seru atau tanda tanya harus ditulis serangkai dengan kata terakhir (tanpa spasi).",
+    "pattern": "\\s+([!?])",
+    "flags": "g",
+    "replacement": "$1",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-013",
+    "name": "Tanda Seru/Tanya Berulang",
+    "description": "Hindari penggunaan tanda tanya atau tanda seru secara berulang/ganda dalam tulisan akademik.",
+    "pattern": "([!?])\\1+",
+    "flags": "g",
+    "replacement": "$1",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-014",
+    "name": "Penulisan Prefiks 'ke-' Terpisah",
+    "description": "Prefiks 'ke-' yang menyatakan urutan bilangan tingkat harus ditulis serangkai.",
+    "pattern": "\\bke\\s+(satu|dua|tiga|empat|lima|enam|tujuh|delapan|sembilan|sepuluh)\\b",
+    "flags": "gi",
+    "replacement": "ke$1",
+    "severity": "error",
+    "issueType": "prefix-suffix"
+  },
+  {
+    "id": "PUEBI-015",
+    "name": "Penulisan Preposisi 'ke' Serangkai",
+    "description": "Preposisi 'ke' yang menyatakan arah tujuan harus ditulis terpisah dengan kata keterangan tempat.",
+    "pattern": "\\bke(sini|situ|sana|atas|bawah|samping|dalam|sebelah)\\b",
+    "flags": "gi",
+    "replacement": "ke $1",
+    "severity": "error",
+    "issueType": "prefix-suffix"
+  },
+  {
+    "id": "PUEBI-016",
+    "name": "Singkatan 'atas nama' Tidak Baku",
+    "description": "Singkatan 'atas nama' yang benar menurut PUEBI adalah 'a.n.', bukan 'a/n'.",
+    "pattern": "\\ba/n\\b",
+    "flags": "gi",
+    "replacement": "a.n.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-017",
+    "name": "Singkatan 'sampai dengan' Tidak Baku",
+    "description": "Singkatan 'sampai dengan' yang benar menurut PUEBI adalah 's.d.', bukan 's/d'.",
+    "pattern": "\\bs/d\\b",
+    "flags": "gi",
+    "replacement": "s.d.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-018",
+    "name": "Angka Di Awal Kalimat",
+    "description": "Angka yang terletak pada awal kalimat harus ditulis dengan huruf (misal: 'Satu...', bukan '1...').",
+    "pattern": "^\\d+",
+    "flags": "",
+    "replacement": "",
+    "severity": "warning",
+    "issueType": "number-format"
+  },
+  {
+    "id": "PUEBI-019",
+    "name": "Spasi Sebelum Titik Dua",
+    "description": "Tanda titik dua harus ditulis serangkai dengan kata sebelumnya (tanpa spasi).",
+    "pattern": "\\s+:",
+    "flags": "g",
+    "replacement": ":",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-020",
+    "name": "Tanpa Spasi Setelah Titik Dua",
+    "description": "Tanda titik dua harus diikuti oleh spasi satu ketukan sebelum kata berikutnya.",
+    "pattern": ":(?=[A-Za-z0-9])",
+    "flags": "g",
+    "replacement": ": ",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-021",
+    "name": "Tanpa Spasi Setelah Titik Koma",
+    "description": "Tanda titik koma harus diikuti oleh spasi satu ketukan sebelum kata berikutnya.",
+    "pattern": ";(?=[A-Za-z0-9])",
+    "flags": "g",
+    "replacement": "; ",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-022",
+    "name": "Spasi Sebelum Titik Koma",
+    "description": "Tanda titik koma harus ditulis serangkai dengan kata sebelumnya (tanpa spasi).",
+    "pattern": "\\s+;",
+    "flags": "g",
+    "replacement": ";",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-023",
+    "name": "Tanda Hubung Dengan Spasi",
+    "description": "Tanda hubung pada kata ulang tidak boleh didahului atau diikuti oleh spasi.",
+    "pattern": "\\s+-\\s*|-\\s+",
+    "flags": "g",
+    "replacement": "-",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-024",
+    "name": "Tanda Titik Ganda",
+    "description": "Penggunaan tanda titik ganda (dua buah titik beruntun) yang tidak perlu.",
+    "pattern": "\\.\\.(?!\\.)",
+    "flags": "g",
+    "replacement": ".",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-025",
+    "name": "Tanda Elipsis Berlebih",
+    "description": "Tanda elipsis yang benar terdiri atas tiga buah titik saja.",
+    "pattern": "\\.{4,}",
+    "flags": "g",
+    "replacement": "...",
+    "severity": "warning",
+    "issueType": "punctuation"
+  },
+  {
+    "id": "PUEBI-026",
+    "name": "Singkatan 'ybs' Tanpa Titik",
+    "description": "Singkatan 'ybs.' (yang bersangkutan) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bybs\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "ybs.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-027",
+    "name": "Singkatan 'tgl' Tanpa Titik",
+    "description": "Singkatan 'tgl.' (tanggal) harus diakhiri dengan tanda titik.",
+    "pattern": "\\btgl\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "tgl.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-028",
+    "name": "Singkatan 'ttd' Tanpa Titik",
+    "description": "Singkatan 'ttd.' (tanda tangan) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bttd\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "ttd.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-029",
+    "name": "Singkatan 'hlm' Tanpa Titik",
+    "description": "Singkatan 'hlm.' (halaman) harus diakhiri dengan tanda titik.",
+    "pattern": "\\bhlm\\b(?!\\.)",
+    "flags": "gi",
+    "replacement": "hlm.",
+    "severity": "warning",
+    "issueType": "abbreviation"
+  },
+  {
+    "id": "PUEBI-030",
+    "name": "Penulisan Suffix '-pun' Terpisah Yang Salah",
+    "description": "Partikel '-pun' yang sudah padu (seperti: bagaimanapun, walaupun, meskipun) harus ditulis serangkai.",
+    "pattern": "\\b(bagaimana|walau|meski|ada|sekali|sungguh|kendati)\\s+pun\\b",
+    "flags": "gi",
+    "replacement": "$1pun",
+    "severity": "error",
+    "issueType": "prefix-suffix"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "BB-001",
+    "module": "Authentication",
+    "name": "Login dengan Kredensial Valid",
+    "action": "Memasukkan email dan kata sandi yang terdaftar pada form login, lalu menekan tombol masuk.",
+    "expectedOutcome": "Sistem memvalidasi kredensial, membuat sesi aktif, dan mengarahkan pengguna ke halaman Dashboard."
+  },
+  {
+    "id": "BB-002",
+    "module": "Authentication",
+    "name": "Login dengan Kata Sandi Salah",
+    "action": "Memasukkan email terdaftar tetapi kata sandi salah pada form login, lalu menekan tombol masuk.",
+    "expectedOutcome": "Sistem menolak masuk dan menampilkan pesan kesalahan: 'Kredensial tidak valid'."
+  },
+  {
+    "id": "BB-003",
+    "module": "Authentication",
+    "name": "Login dengan Email Tidak Terdaftar",
+    "action": "Memasukkan email yang belum terdaftar pada form login, lalu menekan tombol masuk.",
+    "expectedOutcome": "Sistem menolak masuk dan menampilkan pesan kesalahan: 'Kredensial tidak valid'."
+  },
+  {
+    "id": "BB-004",
+    "module": "Authentication",
+    "name": "Registrasi Pengguna Baru",
+    "action": "Mengisi form pendaftaran dengan email baru, kata sandi valid (min 8 karakter), dan nama lengkap.",
+    "expectedOutcome": "Sistem membuat akun baru, mengirimkan email verifikasi, dan menampilkan pesan sukses."
+  },
+  {
+    "id": "BB-005",
+    "module": "Authentication",
+    "name": "Registrasi dengan Kata Sandi Lemah",
+    "action": "Mengisi form pendaftaran dengan kata sandi kurang dari 8 karakter.",
+    "expectedOutcome": "Sistem menolak pendaftaran dan menampilkan validasi form: 'Kata sandi minimal harus 8 karakter'."
+  },
+  {
+    "id": "BB-006",
+    "module": "Profile",
+    "name": "Menampilkan Profil Pengguna",
+    "action": "Membuka halaman Profil setelah login berhasil.",
+    "expectedOutcome": "Sistem menampilkan data profil pengguna saat ini termasuk nama lengkap, alamat email, dan peran pengguna."
+  },
+  {
+    "id": "BB-007",
+    "module": "Profile",
+    "name": "Mengubah Nama Lengkap",
+    "action": "Mengubah isian nama lengkap pada halaman profil lalu menekan tombol simpan.",
+    "expectedOutcome": "Sistem memperbarui database profil pengguna dan menampilkan pesan sukses: 'Profil berhasil diperbarui'."
+  },
+  {
+    "id": "BB-008",
+    "module": "Settings",
+    "name": "Menyimpan Preferensi AI Provider",
+    "action": "Mengubah pilihan penyedia AI (misal dari OpenRouter ke Gemini) di halaman Pengaturan, lalu menekan simpan.",
+    "expectedOutcome": "Sistem menyimpan preferensi baru ke tabel user_settings dan menampilkan toast sukses."
+  },
+  {
+    "id": "BB-009",
+    "module": "Settings",
+    "name": "Mengubah Tema Antarmuka",
+    "action": "Mengubah pilihan tema dari Terang (Light) ke Gelap (Dark).",
+    "expectedOutcome": "Sistem langsung mengubah mode tampilan visual aplikasi menjadi gelap tanpa perlu memuat ulang halaman."
+  },
+  {
+    "id": "BB-010",
+    "module": "Template Library",
+    "name": "Menampilkan Daftar Template",
+    "action": "Membuka halaman Template Library.",
+    "expectedOutcome": "Sistem menampilkan kartu-kartu daftar template jurnal ilmiah yang tersedia beserta asal penerbitnya."
+  },
+  {
+    "id": "BB-011",
+    "module": "Template Library",
+    "name": "Mencari Template berdasarkan Judul",
+    "action": "Mengetikkan kata kunci pencarian di kotak pencarian template (misal: 'IEEE').",
+    "expectedOutcome": "Sistem memperbarui daftar secara real-time dan hanya menampilkan template yang mengandung kata 'IEEE' pada judul/penerbit."
+  },
+  {
+    "id": "BB-012",
+    "module": "Template Upload",
+    "name": "Unggah Berkas Template Valid (DOCX)",
+    "action": "Menarik atau memilih berkas dokumen template format .docx di Wizard analisis langkah kedua.",
+    "expectedOutcome": "Sistem memproses penguraian berkas, menampilkan indikator progres, dan mengarahkan ke pratinjau struktur template."
+  },
+  {
+    "id": "BB-013",
+    "module": "Template Upload",
+    "name": "Unggah Berkas Template Tidak Valid (PDF/TXT)",
+    "action": "Memilih berkas dengan ekstensi .pdf di zona unggah template.",
+    "expectedOutcome": "Sistem mendeteksi format tidak valid sebelum diunggah ke server dan memunculkan pesan validasi: 'Hanya menerima berkas DOCX'."
+  },
+  {
+    "id": "BB-014",
+    "module": "Draft Upload",
+    "name": "Unggah Berkas Draf Artikel Valid",
+    "action": "Mengunggah dokumen artikel format .docx di langkah ketiga wizard analisis.",
+    "expectedOutcome": "Sistem memproses berkas draf, menguraikan teks per bagian, dan menampilkan ringkasan data statistik jumlah kata/paragraf."
+  },
+  {
+    "id": "BB-015",
+    "module": "Draft Upload",
+    "name": "Unggah Berkas Ukuran Melebihi Batas",
+    "action": "Mengunggah draf berkas .docx dengan ukuran 25MB (melebihi batas 20MB).",
+    "expectedOutcome": "Sistem menolak pengunggahan sebelum diproses ke server dan menampilkan pesan kesalahan: 'Ukuran berkas melebihi batas'."
+  },
+  {
+    "id": "BB-016",
+    "module": "Rule-Based Analysis",
+    "name": "Analisis Struktur Draft Saja",
+    "action": "Memilih mode 'Analisis Draft Saja' dan menjalankan proses analisis pada artikel lengkap.",
+    "expectedOutcome": "Sistem menghasilkan skor kelengkapan struktur draf secara instan berdasarkan deteksi sembilan bagian utama akademik."
+  },
+  {
+    "id": "BB-017",
+    "module": "Rule-Based Analysis",
+    "name": "Analisis dengan Pembandingan Template",
+    "action": "Memilih mode 'Analisis dengan Template', mengunggah template dan draf, lalu menjalankan proses analisis.",
+    "expectedOutcome": "Sistem membandingkan struktur heading draf terhadap template dan mendeteksi ketidakpatuhan urutan atau bagian yang hilang."
+  },
+  {
+    "id": "BB-018",
+    "module": "Language Analysis",
+    "name": "Analisis Ejaan dan Tata Bahasa lokal",
+    "action": "Menjalankan analisis kebahasaan pada artikel draft yang memiliki banyak kata tidak baku dan kesalahan ejaan.",
+    "expectedOutcome": "Sistem memetakan kesalahan secara rinci berdasarkan kamus KBBI, aturan PUEBI, dan kepatuhan gaya bahasa ilmiah lokal."
+  },
+  {
+    "id": "BB-019",
+    "module": "AI Recommendation",
+    "name": "Menyajikan Saran Perbaikan AI",
+    "action": "Membuka tab Rekomendasi AI pada halaman hasil analisis setelah proses selesai.",
+    "expectedOutcome": "Sistem menyajikan kartu rekomendasi perbaikan teks per bagian dengan tingkat prioritas (tinggi/sedang/rendah) dan usulan koreksi."
+  },
+  {
+    "id": "BB-020",
+    "module": "AI Recommendation",
+    "name": "Penanganan API AI Down / Offline Fallback",
+    "action": "Menjalankan analisis saat koneksi API penyedia AI mengalami kegagalan (down).",
+    "expectedOutcome": "Sistem secara otomatis mengaktifkan fallback lokal heuristik agar analisis tata bahasa tetap selesai tanpa memunculkan crash."
+  }
+]

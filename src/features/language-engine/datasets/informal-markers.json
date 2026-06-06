@@ -1,0 +1,352 @@
+[
+  {
+    "pattern": "\\b(?:saya|aku|gue|elo|lu|kamu)\\b",
+    "flags": "gi",
+    "replacement": "penulis",
+    "issueType": "first-person",
+    "description": "Penggunaan kata ganti orang pertama/kedua tunggal tidak baku untuk karya tulis ilmiah."
+  },
+  {
+    "pattern": "\\b(?:kita|kami)\\b",
+    "flags": "gi",
+    "replacement": "penulis",
+    "issueType": "first-person",
+    "description": "Penggunaan kata ganti orang pertama jamak sebaiknya diganti dengan istilah 'penulis' atau dinominalkan."
+  },
+  {
+    "pattern": "\\b(?:menurut saya|saya rasa|saya pikir|pendapat saya)\\b",
+    "flags": "gi",
+    "replacement": "penulis berpendapat",
+    "issueType": "subjective-language",
+    "description": "Ungkapan subjektif yang menunjukkan opini pribadi penulis."
+  },
+  {
+    "pattern": "\\b(?:sangat amat|amat sangat)\\b",
+    "flags": "gi",
+    "replacement": "sangat",
+    "issueType": "redundant-phrase",
+    "description": "Pleonasme atau penggunaan kata keterangan penguat yang berlebihan."
+  },
+  {
+    "pattern": "\\b(?:adalah merupakan|merupakan adalah)\\b",
+    "flags": "gi",
+    "replacement": "merupakan",
+    "issueType": "redundant-phrase",
+    "description": "Penggunaan kata kopula ganda (redundansi definisi)."
+  },
+  {
+    "pattern": "\\b(?:yaitu adalah|ialah merupakan)\\b",
+    "flags": "gi",
+    "replacement": "yaitu",
+    "issueType": "redundant-phrase",
+    "description": "Penggunaan kata kopula pendefinisi ganda."
+  },
+  {
+    "pattern": "\\b(?:seperti contohnya|contohnya seperti|misalnya seperti)\\b",
+    "flags": "gi",
+    "replacement": "misalnya",
+    "issueType": "redundant-phrase",
+    "description": "Redundansi dalam pemberian contoh atau ilustrasi."
+  },
+  {
+    "pattern": "\\b(?:agar supaya)\\b",
+    "flags": "gi",
+    "replacement": "agar",
+    "issueType": "redundant-phrase",
+    "description": "Penggunaan dua konjungsi tujuan secara bersamaan."
+  },
+  {
+    "pattern": "\\b(?:demi untuk)\\b",
+    "flags": "gi",
+    "replacement": "untuk",
+    "issueType": "redundant-phrase",
+    "description": "Penggunaan konjungsi tujuan ganda."
+  },
+  {
+    "pattern": "\\b(?:terus|trus|abis itu|habis itu)\\b",
+    "flags": "gi",
+    "replacement": "kemudian",
+    "issueType": "non-academic-connector",
+    "description": "Penggunaan konjungsi temporal informal atau lisan."
+  },
+  {
+    "pattern": "\\b(?:nah|lho|kok|sih|dong|deh)\\b",
+    "flags": "gi",
+    "replacement": "",
+    "issueType": "colloquial",
+    "description": "Partikel penegas lisan yang tidak baku dalam penulisan akademis."
+  },
+  {
+    "pattern": "\\b(?:nggak|gak|engga|enggak)\\b",
+    "flags": "gi",
+    "replacement": "tidak",
+    "issueType": "colloquial",
+    "description": "Negasi lisan tidak baku."
+  },
+  {
+    "pattern": "\\b(?:udah|sudahan)\\b",
+    "flags": "gi",
+    "replacement": "sudah",
+    "issueType": "colloquial",
+    "description": "Bentuk penunjuk waktu aspek tidak baku."
+  },
+  {
+    "pattern": "\\b(?:gimana|gimana caranya)\\b",
+    "flags": "gi",
+    "replacement": "bagaimana",
+    "issueType": "informal-phrase",
+    "description": "Kata tanya informal."
+  },
+  {
+    "pattern": "\\b(?:cuma|cuman)\\b",
+    "flags": "gi",
+    "replacement": "hanya",
+    "issueType": "informal-phrase",
+    "description": "Kata pembatas tidak baku."
+  },
+  {
+    "pattern": "\\b(?:bikin|bikin-bikin)\\b",
+    "flags": "gi",
+    "replacement": "membuat",
+    "issueType": "informal-phrase",
+    "description": "Kata kerja buatan informal."
+  },
+  {
+    "pattern": "\\b(?:pake|pakai) (?:alat|cara|metode)\\b",
+    "flags": "gi",
+    "replacement": "menggunakan",
+    "issueType": "informal-phrase",
+    "description": "Penggunaan verba lisan untuk menunjukkan instrumen."
+  },
+  {
+    "pattern": "\\b(?:kayaknya|sepertinya saja)\\b",
+    "flags": "gi",
+    "replacement": "tampaknya",
+    "issueType": "colloquial",
+    "description": "Ungkapan spekulatif yang tidak baku."
+  },
+  {
+    "pattern": "\\b(?:dapet|dapet hasil)\\b",
+    "flags": "gi",
+    "replacement": "memperoleh",
+    "issueType": "informal-phrase",
+    "description": "Verba perolehan tidak baku."
+  },
+  {
+    "pattern": "\\b(?:ngomong|bicara tentang)\\b",
+    "flags": "gi",
+    "replacement": "membahas",
+    "issueType": "informal-phrase",
+    "description": "Verba lisan tidak baku dalam mengkaji topik."
+  },
+  {
+    "pattern": "\\b(?:kira-kira|kurang lebih)\\b",
+    "flags": "gi",
+    "replacement": "sekitar",
+    "issueType": "colloquial",
+    "description": "Ungkapan perkiraan informal."
+  },
+  {
+    "pattern": "\\b(?:jalan keluar|titik temu)\\b",
+    "flags": "gi",
+    "replacement": "solusi",
+    "issueType": "colloquial",
+    "description": "Kiasan/metafora informal."
+  },
+  {
+    "pattern": "\\b(?:lagipula|lagi pula)\\b",
+    "flags": "gi",
+    "replacement": "selain itu",
+    "issueType": "non-academic-connector",
+    "description": "Konjungsi argumentatif informal."
+  },
+  {
+    "pattern": "\\b(?:tahu|tau) (?:bahwa|kalau)\\b",
+    "flags": "gi",
+    "replacement": "memahami",
+    "issueType": "weak-verb",
+    "description": "Verba kognitif lisan."
+  },
+  {
+    "pattern": "\\b(?:bisa dibilang|dapat dikatakan)\\b",
+    "flags": "gi",
+    "replacement": "dapat dinyatakan",
+    "issueType": "colloquial",
+    "description": "Ungkapan kualifikasi informal."
+  },
+  {
+    "pattern": "\\b(?:secara garis besar)\\b",
+    "flags": "gi",
+    "replacement": "secara umum",
+    "issueType": "colloquial",
+    "description": "Ungkapan kiasan pembatas."
+  },
+  {
+    "pattern": "\\b(?:paling tidak|setidaknya)\\b",
+    "flags": "gi",
+    "replacement": "minimal",
+    "issueType": "colloquial",
+    "description": "Ungkapan pembatas tidak baku."
+  },
+  {
+    "pattern": "\\b(?:sama sekali tidak)\\b",
+    "flags": "gi",
+    "replacement": "tidak",
+    "issueType": "redundant-phrase",
+    "description": "Pernyataan negasi berlebihan."
+  },
+  {
+    "pattern": "\\b(?:sangat luar biasa|sangat hebat)\\b",
+    "flags": "gi",
+    "replacement": "sangat signifikan",
+    "issueType": "subjective-language",
+    "description": "Penggunaan kata sifat emosional/subjektif."
+  },
+  {
+    "pattern": "\\b(?:mungkin saja|bisa jadi)\\b",
+    "flags": "gi",
+    "replacement": "kemungkinan",
+    "issueType": "weak-verb",
+    "description": "Penggunaan verba pembatas yang terlalu lemah."
+  },
+  {
+    "pattern": "\\b(?:cuma buat|hanya untuk)\\b",
+    "flags": "gi",
+    "replacement": "hanya untuk",
+    "issueType": "informal-phrase",
+    "description": "Bentuk preposisi tujuan lisan."
+  },
+  {
+    "pattern": "\\b(?:tahu sendiri|sama-sama tahu)\\b",
+    "flags": "gi",
+    "replacement": "diketahui",
+    "issueType": "colloquial",
+    "description": "Ungkapan keterlibatan pembaca informal."
+  },
+  {
+    "pattern": "\\b(?:gampang sekali|sangat gampang)\\b",
+    "flags": "gi",
+    "replacement": "sangat mudah",
+    "issueType": "informal-phrase",
+    "description": "Bentuk penilaian subjektif lisan."
+  },
+  {
+    "pattern": "\\b(?:susah banget|sangat susah)\\b",
+    "flags": "gi",
+    "replacement": "sangat sulit",
+    "issueType": "colloquial",
+    "description": "Bentuk kesulitan penilaian subjektif tidak baku."
+  },
+  {
+    "pattern": "\\b(?:di mana saja|kapan saja|siapa saja)\\b",
+    "flags": "gi",
+    "replacement": "di mana pun",
+    "issueType": "informal-phrase",
+    "description": "BentukGeneralisasi lisan."
+  },
+  {
+    "pattern": "\\b(?:bikin sulit|bikin ribet)\\b",
+    "flags": "gi",
+    "replacement": "mempersulit",
+    "issueType": "informal-phrase",
+    "description": "Verba bentukan informal."
+  },
+  {
+    "pattern": "\\b(?:bikin mudah|bikin gampang)\\b",
+    "flags": "gi",
+    "replacement": "mempermudah",
+    "issueType": "informal-phrase",
+    "description": "Verba bentukan informal."
+  },
+  {
+    "pattern": "\\b(?:ambil bagian|ikut serta)\\b",
+    "flags": "gi",
+    "replacement": "berpartisipasi",
+    "issueType": "colloquial",
+    "description": "Ungkapan tindakan lisan."
+  },
+  {
+    "pattern": "\\b(?:ambil keputusan)\\b",
+    "flags": "gi",
+    "replacement": "menetapkan keputusan",
+    "issueType": "informal-phrase",
+    "description": "Ungkapan tindakan tidak baku."
+  },
+  {
+    "pattern": "\\b(?:cari tahu)\\b",
+    "flags": "gi",
+    "replacement": "menyelidiki",
+    "issueType": "informal-phrase",
+    "description": "Verba tindakan lisan."
+  },
+  {
+    "pattern": "\\b(?:kasih tahu|kasih tau)\\b",
+    "flags": "gi",
+    "replacement": "menginformasikan",
+    "issueType": "informal-phrase",
+    "description": "Verba komunikasi lisan."
+  },
+  {
+    "pattern": "\\b(?:minta tolong)\\b",
+    "flags": "gi",
+    "replacement": "memohon bantuan",
+    "issueType": "colloquial",
+    "description": "Permohonan informal."
+  },
+  {
+    "pattern": "\\b(?:ujung-ujungnya)\\b",
+    "flags": "gi",
+    "replacement": "pada akhirnya",
+    "issueType": "colloquial",
+    "description": "Konjungsi temporal tidak baku."
+  },
+  {
+    "pattern": "\\b(?:lama-lama|lambat laun)\\b",
+    "flags": "gi",
+    "replacement": "lambat laun",
+    "issueType": "colloquial",
+    "description": "Keterangan waktu aspek tidak baku."
+  },
+  {
+    "pattern": "\\b(?:mula-mula)\\b",
+    "flags": "gi",
+    "replacement": "pada awalnya",
+    "issueType": "colloquial",
+    "description": "Keterangan waktu permulaan lisan."
+  },
+  {
+    "pattern": "\\b(?:tiba-tiba)\\b",
+    "flags": "gi",
+    "replacement": "secara mendadak",
+    "issueType": "colloquial",
+    "description": "Keterangan keadaan tidak akademis."
+  },
+  {
+    "pattern": "\\b(?:ngomong-ngomong|omong-omong)\\b",
+    "flags": "gi",
+    "replacement": "selain itu",
+    "issueType": "colloquial",
+    "description": "Peralihan topik informal."
+  },
+  {
+    "pattern": "\\b(?:seperti yang kita ketahui|seperti yang kita tahu)\\b",
+    "flags": "gi",
+    "replacement": "sebagaimana diketahui",
+    "issueType": "first-person",
+    "description": "Asumsi kolektif subjektif menggunakan kata ganti kita."
+  },
+  {
+    "pattern": "\\b(?:seperti yang saya katakan|seperti dijelaskan di atas)\\b",
+    "flags": "gi",
+    "replacement": "sebagaimana telah dipaparkan sebelumnya",
+    "issueType": "first-person",
+    "description": "Rujukan diri subjektif menggunakan kata ganti saya."
+  },
+  {
+    "pattern": "\\b(?:secara jujur|sejujurnya)\\b",
+    "flags": "gi",
+    "replacement": "secara objektif",
+    "issueType": "subjective-language",
+    "description": "Ungkapan emosional yang mengurangi objektivitas ilmiah."
+  }
+]

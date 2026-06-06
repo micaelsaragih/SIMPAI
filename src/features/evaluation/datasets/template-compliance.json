@@ -1,0 +1,288 @@
+[
+  {
+    "id": "CMP-001",
+    "name": "Kepatuhan Sempurna",
+    "description": "Draft artikel memiliki struktur bagian yang persis sama dengan template jurnal.",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 100,
+      "missingCount": 0,
+      "extraCount": 0,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-002",
+    "name": "Satu Bagian Wajib Hilang",
+    "description": "Bagian 'Pembahasan' ada di template tetapi tidak ditemukan di draft.",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 85,
+      "missingCount": 1,
+      "extraCount": 0,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-003",
+    "name": "Satu Bagian Tambahan di Draft",
+    "description": "Draft memiliki bagian tambahan 'Lampiran' yang tidak didefinisikan di template.",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka",
+        "Lampiran"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 95,
+      "missingCount": 0,
+      "extraCount": 1,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-004",
+    "name": "Kesalahan Urutan Ringan",
+    "description": "Bagian 'Kata Kunci' dan 'Abstrak' terbalik posisinya di draft.",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Kata Kunci",
+        "Abstrak",
+        "Pendahuluan"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan"
+      ]
+    },
+    "expected": {
+      "compliance": 80,
+      "missingCount": 0,
+      "extraCount": 0,
+      "orderIssueCount": 2
+    }
+  },
+  {
+    "id": "CMP-005",
+    "name": "Urutan Terbalik Total",
+    "description": "Seluruh bagian diurutkan secara terbalik dari template.",
+    "input": {
+      "draftHeadings": [
+        "Daftar Pustaka",
+        "Kesimpulan",
+        "Pembahasan",
+        "Hasil Penelitian",
+        "Metode Penelitian",
+        "Pendahuluan",
+        "Kata Kunci",
+        "Abstrak",
+        "Judul"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 20,
+      "missingCount": 0,
+      "extraCount": 0,
+      "orderIssueCount": 8
+    }
+  },
+  {
+    "id": "CMP-006",
+    "name": "Kombinasi Hilang dan Tambahan",
+    "description": "Draft kehilangan satu bagian wajib (Metode) dan menambahkan satu bagian tidak penting (Ucapan Terima Kasih).",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Hasil Penelitian",
+        "Daftar Pustaka",
+        "Ucapan Terima Kasih"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 80,
+      "missingCount": 1,
+      "extraCount": 1,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-007",
+    "name": "Draft Kosong Dibandingkan Template Lengkap",
+    "description": "Draft kosong dibandingkan dengan template yang memiliki semua 9 bagian.",
+    "input": {
+      "draftHeadings": [],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan",
+        "Metode Penelitian",
+        "Hasil Penelitian",
+        "Pembahasan",
+        "Kesimpulan",
+        "Daftar Pustaka"
+      ]
+    },
+    "expected": {
+      "compliance": 0,
+      "missingCount": 9,
+      "extraCount": 0,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-008",
+    "name": "Template Kosong Dibandingkan Draft Lengkap",
+    "description": "Template kosong dibandingkan dengan draft lengkap.",
+    "input": {
+      "draftHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci"
+      ],
+      "templateHeadings": []
+    },
+    "expected": {
+      "compliance": 85,
+      "missingCount": 0,
+      "extraCount": 3,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-009",
+    "name": "Toleransi Penulisan Heading (Case Insensitive)",
+    "description": "Heading ditulis dengan perbedaan huruf besar-kecil tapi harus dianggap sama.",
+    "input": {
+      "draftHeadings": [
+        "judul",
+        "ABSTRAK",
+        "Kata Kunci"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "kata kunci"
+      ]
+    },
+    "expected": {
+      "compliance": 100,
+      "missingCount": 0,
+      "extraCount": 0,
+      "orderIssueCount": 0
+    }
+  },
+  {
+    "id": "CMP-010",
+    "name": "Kepatuhan Sebagian dengan Kekacauan Urutan",
+    "description": "Draft kehilangan 2 bagian wajib dan 2 bagian sisanya terbalik.",
+    "input": {
+      "draftHeadings": [
+        "Kata Kunci",
+        "Abstrak"
+      ],
+      "templateHeadings": [
+        "Judul",
+        "Abstrak",
+        "Kata Kunci",
+        "Pendahuluan"
+      ]
+    },
+    "expected": {
+      "compliance": 50,
+      "missingCount": 2,
+      "extraCount": 0,
+      "orderIssueCount": 2
+    }
+  }
+]

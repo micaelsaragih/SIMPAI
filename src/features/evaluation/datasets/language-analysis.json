@@ -1,0 +1,227 @@
+[
+  {
+    "id": "LANG-001",
+    "name": "KBBI - Kata Tidak Baku 'analisa'",
+    "description": "Mendeteksi kata tidak baku 'analisa' dan menyarankan kata baku 'analisis'.",
+    "category": "kbbi",
+    "input": {
+      "text": "Peneliti melakukan analisa terhadap sampel air sungai.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["non-standard-word"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-002",
+    "name": "KBBI - Kata Tidak Baku 'aktifitas'",
+    "description": "Mendeteksi kata tidak baku 'aktifitas' dan menyarankan kata baku 'aktivitas'.",
+    "category": "kbbi",
+    "input": {
+      "text": "Aktifitas pengukuran dilakukan pada pagi hari.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["non-standard-word"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-003",
+    "name": "KBBI - Kata Serapan Inggris 'download'",
+    "description": "Mendeteksi kata bahasa Inggris 'download' dan menyarankan istilah standar 'unduh'.",
+    "category": "kbbi",
+    "input": {
+      "text": "Pengguna dapat download berkas data mentah.",
+      "sectionHeading": "Hasil"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["non-standard-word"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-004",
+    "name": "KBBI - Kata Serapan Inggris 'simple'",
+    "description": "Mendeteksi kata 'simple' dan menyarankan 'sederhana'.",
+    "category": "kbbi",
+    "input": {
+      "text": "Metode yang digunakan tergolong sangat simple.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["non-standard-word"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-005",
+    "name": "KBBI - Kata Tidak Baku 'apotik'",
+    "description": "Mendeteksi kata tidak baku 'apotik' dan menyarankan 'apotek'.",
+    "category": "kbbi",
+    "input": {
+      "text": "Penelitian berlokasi di apotik daerah.",
+      "sectionHeading": "Pendahuluan"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["non-standard-word"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-006",
+    "name": "PUEBI - Spasi Ganda",
+    "description": "Mendeteksi penggunaan spasi berlebih dalam kalimat.",
+    "category": "puebi",
+    "input": {
+      "text": "Ini  adalah pengujian spasi ganda.",
+      "sectionHeading": "Pendahuluan"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["punctuation"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-007",
+    "name": "PUEBI - Prefiks di- Terpisah",
+    "description": "Mendeteksi prefiks 'di-' pasif yang terpisah dengan spasi.",
+    "category": "puebi",
+    "input": {
+      "text": "Penelitian ini di buat pada tahun 2026.",
+      "sectionHeading": "Pendahuluan"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["prefix-suffix"],
+      "minSeverity": "error"
+    }
+  },
+  {
+    "id": "LANG-008",
+    "name": "PUEBI - Spasi Sebelum Koma",
+    "description": "Mendeteksi spasi sebelum tanda baca koma.",
+    "category": "puebi",
+    "input": {
+      "text": "Hasil penelitian ini , menunjukkan pengaruh signifikan.",
+      "sectionHeading": "Hasil"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["punctuation"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-009",
+    "name": "PUEBI - Singkatan dll Tanpa Titik",
+    "description": "Mendeteksi singkatan 'dll' yang tidak diikuti tanda titik.",
+    "category": "puebi",
+    "input": {
+      "text": "Alat yang digunakan mencakup sensor suhu, kelembaban, dll untuk data.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["abbreviation"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-010",
+    "name": "PUEBI - Singkatan s/d Tidak Baku",
+    "description": "Mendeteksi penggunaan 's/d' dan menyarankan 's.d.'.",
+    "category": "puebi",
+    "input": {
+      "text": "Uji coba dilaksanakan dari jam 08:00 s/d 10:00 WIB.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["abbreviation"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-011",
+    "name": "Style - Kata Ganti Orang Pertama 'Kami'",
+    "description": "Mendeteksi kata 'kami' dalam draf akademik.",
+    "category": "academic-style",
+    "input": {
+      "text": "Dalam penelitian ini, kami menyusun hipotesis baru.",
+      "sectionHeading": "Pendahuluan"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["first-person"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-012",
+    "name": "Style - Pleonasme 'Sangat Amat'",
+    "description": "Mendeteksi kalimat pleonasme 'sangat amat'.",
+    "category": "academic-style",
+    "input": {
+      "text": "Pengujian tersebut menghasilkan data yang sangat amat akurat.",
+      "sectionHeading": "Hasil"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["redundant-phrase"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-013",
+    "name": "Style - Kata Kopula Ganda 'Yaitu Adalah'",
+    "description": "Mendeteksi penggunaan 'yaitu adalah' yang redundant.",
+    "category": "academic-style",
+    "input": {
+      "text": "Metode utama penelitian yaitu adalah metode eksperimen.",
+      "sectionHeading": "Metodologi"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["redundant-phrase"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-014",
+    "name": "Style - Kata Lisan Tidak Baku 'Nggak'",
+    "description": "Mendeteksi kata lisan 'nggak' dan menyarankan 'tidak'.",
+    "category": "academic-style",
+    "input": {
+      "text": "Hasil uji statistik nggak menunjukkan perbedaan yang berarti.",
+      "sectionHeading": "Hasil"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["colloquial"],
+      "minSeverity": "warning"
+    }
+  },
+  {
+    "id": "LANG-015",
+    "name": "Style - Kata Kerja Lisan 'Bikin'",
+    "description": "Mendeteksi kata lisan 'bikin' dan menyarankan 'membuat'.",
+    "category": "academic-style",
+    "input": {
+      "text": "Kenaikan suhu bikin reaksi kimia berjalan lebih cepat.",
+      "sectionHeading": "Pembahasan"
+    },
+    "expected": {
+      "issueCount": 1,
+      "issueTypes": ["informal-phrase"],
+      "minSeverity": "warning"
+    }
+  }
+]

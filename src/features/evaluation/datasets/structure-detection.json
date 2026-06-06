@@ -1,0 +1,404 @@
+[
+  {
+    "id": "STR-001",
+    "name": "Standard Heading Document",
+    "description": "Dokumen akademik standar dengan heading styles (H1-H6) dan semua bagian lengkap.",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Optimasi Jaringan dengan Deep Learning" },
+        { "level": 1, "text": "Abstrak" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "Pendahuluan" },
+        { "level": 1, "text": "Metodologi" },
+        { "level": 1, "text": "Hasil" },
+        { "level": 1, "text": "Pembahasan" },
+        { "level": 1, "text": "Kesimpulan" },
+        { "level": 1, "text": "Daftar Pustaka" }
+      ],
+      "paragraphs": [
+        { "text": "Optimasi Jaringan dengan Deep Learning untuk Kinerja Maksimal." },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "kata kunci, deep learning, optimasi jaringan" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima atau ditolak. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-002",
+    "name": "Indonesian Journal Format (No Heading Styles)",
+    "description": "Menguji dokumen format jurnal Indonesia yang tidak menggunakan heading style melainkan paragraf manual biasa.",
+    "input": {
+      "headings": [],
+      "paragraphs": [
+        { "text": "Penerapan Machine Learning Untuk Deteksi Dini Kanker" },
+        { "text": "ABSTRAK" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "KATA KUNCI" },
+        { "text": "machine learning, kanker, deteksi dini" },
+        { "text": "PENDAHULUAN" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "METODE PENELITIAN" },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "HASIL DAN PEMBAHASAN" },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif. Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "KESIMPULAN" },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "DAFTAR PUSTAKA" },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B. [2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-003",
+    "name": "Thesis BAB Structure Support",
+    "description": "Menguji format skripsi/tesis menggunakan penanda BAB I, BAB II, BAB III, BAB IV, BAB V.",
+    "input": {
+      "headings": [],
+      "paragraphs": [
+        { "text": "Rancang Bangun Sistem Informasi Manajemen Keuangan Sekolah" },
+        { "text": "ABSTRAK" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "KATA KUNCI" },
+        { "text": "sistem informasi, manajemen keuangan, rancang bangun" },
+        { "text": "BAB I PENDAHULUAN" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "BAB II TINJAUAN PUSTAKA" },
+        { "text": "Tinjauan pustaka memuat teori-teori pendukung penelitian ini seperti konsep dasar sistem informasi manajemen keuangan sekolah dan penelitian terdahulu yang pernah dilakukan oleh para pakar di bidang teknologi informasi." },
+        { "text": "BAB III METODOLOGI PENELITIAN" },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "BAB IV HASIL PENELITIAN DAN PEMBAHASAN" },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif. Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "BAB V KESIMPULAN DAN SARAN" },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "DAFTAR PUSTAKA" },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-004",
+    "name": "Uppercase Sections (No Headings)",
+    "description": "Menguji deteksi section bermodalkan huruf besar (UPPERCASE) tanpa heading style.",
+    "input": {
+      "headings": [],
+      "paragraphs": [
+        { "text": "ANALISIS SENTIMEN DATA TWITTER MENGGUNAKAN PYTHON" },
+        { "text": "ABSTRAK" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "KATA KUNCI" },
+        { "text": "analisis sentimen, twitter, python" },
+        { "text": "PENDAHULUAN" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "METODE PENELITIAN" },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "HASIL" },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "PEMBAHASAN" },
+        { "text": "Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima atau ditolak. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "KESIMPULAN" },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "DAFTAR PUSTAKA" },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-005",
+    "name": "Mixed Indonesian-English Sections",
+    "description": "Menguji deteksi campuran bahasa Inggris dan Indonesia pada heading (misalnya ABSTRACT, PENDAHULUAN, References).",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Title of My Research Paper" },
+        { "level": 1, "text": "ABSTRACT" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "PENDAHULUAN" },
+        { "level": 1, "text": "Methodology" },
+        { "level": 1, "text": "Hasil" },
+        { "level": 1, "text": "Discussion" },
+        { "level": 1, "text": "KESIMPULAN" },
+        { "level": 1, "text": "References" }
+      ],
+      "paragraphs": [
+        { "text": "Title of My Research Paper is about machine learning." },
+        { "text": "This abstract is composed of multiple sentences to exceed the fifty words limit requirements. Academic templates expect a certain length of abstract to represent the paper content thoroughly. Therefore, this abstract provides context, method, main results, and significant conclusions of this proposed paper in a formal tone. It helps readers understand the research." },
+        { "text": "keywords, computer science, mixed" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Our methodology section details the research design, data collection, and analysis procedures. We describe the algorithms, configurations, and baseline methods compared in our experiments. All hardware and software specifications are listed to ensure reproducibility. This section is structured to help other researchers replicate the experimental results under the same environment configuration." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "The discussion section evaluates the results in comparison to prior studies and literature. We analyze why our model performs better and address potential limitations that might affect the findings. Future research directions and broader impacts are discussed as well. This analysis clearly demonstrates the novel contributions of our proposed architecture compared to established state-of-the-art baselines in this academic domain." },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "[1] Author A. (2026). Paper Title. Journal of Science.\n[2] Author B. (2025). Book Title. Academic Press." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-006",
+    "name": "Abstract Only",
+    "description": "Menguji dokumen yang hanya memuat abstrak dan judul saja, bagian lainnya absen.",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Pengaruh Musik Klasik terhadap Konsentrasi Belajar" },
+        { "level": 1, "text": "Abstrak" }
+      ],
+      "paragraphs": [
+        { "text": "Pengaruh Musik Klasik terhadap Konsentrasi Belajar Mahasiswa" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "MISSING" },
+        { "section": "introduction", "status": "MISSING" },
+        { "section": "methodology", "status": "MISSING" },
+        { "section": "results", "status": "MISSING" },
+        { "section": "discussion", "status": "MISSING" },
+        { "section": "conclusion", "status": "MISSING" },
+        { "section": "references", "status": "MISSING" }
+      ],
+      "completeness": 22
+    }
+  },
+  {
+    "id": "STR-007",
+    "name": "Missing Conclusion",
+    "description": "Menguji dokumen lengkap kecuali bagian kesimpulan yang hilang.",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Deteksi Anomali Jaringan" },
+        { "level": 1, "text": "Abstrak" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "Pendahuluan" },
+        { "level": 1, "text": "Metodologi" },
+        { "level": 1, "text": "Hasil" },
+        { "level": 1, "text": "Pembahasan" },
+        { "level": 1, "text": "Daftar Pustaka" }
+      ],
+      "paragraphs": [
+        { "text": "Deteksi Anomali Jaringan dengan Metode Heuristik" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "kata kunci, anomali, jaringan" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima atau ditolak. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "MISSING" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 89
+    }
+  },
+  {
+    "id": "STR-008",
+    "name": "Missing References",
+    "description": "Menguji dokumen lengkap kecuali bagian referensi/daftar pustaka yang hilang.",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Pengenalan Wajah dengan CNN" },
+        { "level": 1, "text": "Abstrak" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "Pendahuluan" },
+        { "level": 1, "text": "Metodologi" },
+        { "level": 1, "text": "Hasil" },
+        { "level": 1, "text": "Pembahasan" },
+        { "level": 1, "text": "Kesimpulan" }
+      ],
+      "paragraphs": [
+        { "text": "Pengenalan Wajah Berbasis Convolutional Neural Network" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "kata kunci, cnn, pengenalan wajah" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima atau ditolak. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "MISSING" }
+      ],
+      "completeness": 89
+    }
+  },
+  {
+    "id": "STR-009",
+    "name": "Combined Results & Discussion",
+    "description": "Menguji gabungan bagian Hasil dan Pembahasan (Hasil dan Pembahasan) agar terpetakan ke keduanya.",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "Pengembangan Game Edukasi Anak" },
+        { "level": 1, "text": "Abstrak" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "Pendahuluan" },
+        { "level": 1, "text": "Metodologi" },
+        { "level": 1, "text": "Hasil dan Pembahasan" },
+        { "level": 1, "text": "Kesimpulan" },
+        { "level": 1, "text": "Daftar Pustaka" }
+      ],
+      "paragraphs": [
+        { "text": "Pengembangan Game Edukasi Anak Berbasis Android" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "kata kunci, game edukasi, anak" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "FOUND" },
+        { "section": "methodology", "status": "FOUND" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 100
+    }
+  },
+  {
+    "id": "STR-010",
+    "name": "Non-standard Formatting (Typos & Spaces)",
+    "description": "Menguji toleransi kesalahan penulisan heading (typo, spasi acak, format non-standar seperti Daftar Referensi).",
+    "input": {
+      "headings": [
+        { "level": 1, "text": "  Deteksi Spam Email  " },
+        { "level": 1, "text": "Abstrak" },
+        { "level": 1, "text": "Kata Kunci" },
+        { "level": 1, "text": "Penda huluansi" },
+        { "level": 1, "text": "Metodol0gi" },
+        { "level": 1, "text": "Hasil" },
+        { "level": 1, "text": "Pembahasan" },
+        { "level": 1, "text": "Kesimpulan" },
+        { "level": 1, "text": "Daftar Referensi" }
+      ],
+      "paragraphs": [
+        { "text": "Deteksi Spam Email dengan Menggunakan Naive Bayes Classifier" },
+        { "text": "Abstrak adalah ringkasan dari seluruh isi dokumen ilmiah yang menjelaskan latar belakang masalah penelitian ini secara detail dan mendalam. Selain itu, bagian ini juga memaparkan tujuan utama dilakukannya studi, metodologi riset yang diterapkan untuk pengumpulan data, hasil temuan penting yang diperoleh, serta kesimpulan akhir dari seluruh rangkaian penelitian yang telah dilaksanakan oleh penulis demi kebaikan kemanusiaan." },
+        { "text": "kata kunci, spam, deteksi" },
+        { "text": "Pendahuluan memaparkan latar belakang masalah yang menjadi dasar dilakukannya penelitian ilmiah ini secara komprehensif. Penulis menguraikan urgensi dari topik yang dibahas serta menyajikan rumusan masalah yang jelas. Selain itu, dipaparkan pula tujuan penelitian, ruang lingkup kajian, serta kontribusi teoretis maupun praktis yang diharapkan dapat memberikan manfaat bagi perkembangan ilmu pengetahuan di bidang ini." },
+        { "text": "Metodologi penelitian menjelaskan secara rinci tentang desain riset yang digunakan serta prosedur pengumpulan data di lapangan. Peneliti memaparkan populasi dan sampel yang dipilih, instrumen pengukuran yang valid, serta teknik analisis data statistik yang diterapkan. Semua penjelasan ini disajikan secara transparan dan sistematis untuk memastikan hasil penelitian dapat direplikasi secara akurat oleh peneliti lain di masa depan." },
+        { "text": "Hasil penelitian menyajikan seluruh temuan data empiris yang diperoleh dari proses analisis statistik. Peneliti memaparkan angka-angka signifikansi pengujian hipotesis serta menampilkan tabel deskriptif dan grafik yang mendukung. Seluruh data disajikan secara objektif tanpa interpretasi subjektif, memberikan gambaran yang jelas mengenai kondisi nyata dari objek yang diteliti selama periode pengamatan berlangsung." },
+        { "text": "Pembahasan menginterpretasikan temuan hasil penelitian dengan mengaitkannya pada teori-teori relevan dan studi-studi terdahulu. Peneliti menganalisis hubungan sebab akibat antar variabel serta memberikan penjelasan logis mengapa hipotesis tertentu diterima atau ditolak. Bagian ini juga membahas keterbatasan dari penelitian yang dilakukan serta memberikan pandangan mendalam mengenai implikasi hasil bagi aplikasi praktis yang ada." },
+        { "text": "Kesimpulan merangkum jawaban atas seluruh rumusan masalah penelitian berdasarkan hasil analisis dan pembahasan yang telah dipaparkan sebelumnya. Penulis juga memberikan saran-saran akademis dan praktis yang konstruktif bagi peneliti selanjutnya agar dapat mengembangkan topik ini dengan metode yang lebih komprehensif." },
+        { "text": "[1] Penulis A. (2026). Judul Buku Referensi. Penerbit B.\n[2] Penulis C. (2025). Artikel Jurnal. Jurnal Ilmiah." }
+      ]
+    },
+    "expected": {
+      "sections": [
+        { "section": "title", "status": "FOUND" },
+        { "section": "abstract", "status": "FOUND" },
+        { "section": "keywords", "status": "FOUND" },
+        { "section": "introduction", "status": "UNCERTAIN" },
+        { "section": "methodology", "status": "UNCERTAIN" },
+        { "section": "results", "status": "FOUND" },
+        { "section": "discussion", "status": "FOUND" },
+        { "section": "conclusion", "status": "FOUND" },
+        { "section": "references", "status": "FOUND" }
+      ],
+      "completeness": 83
+    }
+  }
+]
