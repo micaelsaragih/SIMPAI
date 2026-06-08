@@ -61,7 +61,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       .eq("user_id", user.id)
       .single()
 
-    const preferredProvider = settings?.preferred_ai_provider || "openrouter"
+    const preferredProvider = settings?.preferred_ai_provider || "gemini"
 
     // 4. Run local deterministic evaluations
     const structure = analyzeStructure(draftData)

@@ -1,103 +1,201 @@
-import { IAIProvider, AnalysisRequest, AnalysisResponse } from "../types"
+import { IAIProvider } from "../interfaces/ai-provider"
+import { 
+  AnalysisRequest, 
+  AnalysisResponse, 
+  AIAnalysisResult, 
+  AIAnalysisResultSchema 
+} from "../types/ai-types"
+import { compileUnifiedAIPrompt } from "@/features/ai-analysis"
+import { SYSTEM_ROLE } from "../prompts/analysis-prompt"
+import type { ParsedDocument, Heading } from "@/types/analysis"
 import type { StructureAnalysis, ComplianceResult } from "@/features/analysis-engine/types"
+
+// Enforce server-side execution
+if (typeof window !== "undefined") {
+  throw new Error("OpenAIProvider can only be instantiated on the server side.")
+}
 
 export class OpenAIProvider implements IAIProvider {
   name = "OpenAI"
 
+  // Model strategy: Primary -> Fallback
+  private models = [
+    "gpt-4o-mini",
+    "gpt-4-turbo"
+  ]
+
   async analyzeArticle(request: AnalysisRequest): Promise<AnalysisResponse> {
     const apiKey = process.env.OPENAI_API_KEY
+    const baseUrl = process.env.OPENAI_BASE_URL || "https://api.openai.com/v1"
+
     if (!apiKey) {
-      throw new Error("OpenAI API key is not configured in environment variables.")
+      throw new Error("OPENAI_API_KEY is not configured in environment variables.")
     }
 
-    const { articleText, templateText, config = {} } = request
-    const structure = config.structure as StructureAnalysis | undefined
-    const compliance = config.compliance as ComplianceResult | null | undefined
-
-    const truncatedArticleText = articleText.substring(0, 15000)
-    const truncatedTemplateText = templateText ? templateText.substring(0, 10000) : ""
-
-    const systemPrompt = `Anda adalah editor jurnal ilmiah dan reviewer di SIMPAI.
-Tugas Anda adalah mengevaluasi kelayakan artikel ilmiah berdasarkan kaidah riset akademik formal.
-Output Anda wajib berupa objek JSON murni tanpa hiasan markdown sesuai struktur ini:
-{
-  "score": 85,
-  "structure": [
-    { "section": "Judul", "status": "found", "feedback": "Judul artikel terstruktur dengan baik." }
-  ],
-  "compliance": {
-    "score": 90,
-    "missingSections": [],
-    "wrongOrder": [],
-    "additionalSections": []
-  },
-  "language": [
-    { "word": "saya", "type": "informal", "suggestion": "penulis", "context": "...maka dari itu saya melakukan penelitian..." }
-  ],
-  "recommendations": [
-    { "category": "structure", "priority": 1, "title": "Lengkapi Metodologi", "description": "Metodologi riset belum dijabarkan lengkap.", "suggestedFix": "Sebutkan teknik survei secara eksplisit." }
-  ]
-}
-
-Aturan Ketat Pencegahan Halusinasi:
-- Hanya periksa konten riset yang tertulis di draf dokumen pengguna.
-- Jangan mengarang data referensi, DOI, atau jurnal yang tidak ada.`
-
-    const userPrompt = `
-DRAF ARTIKEL PENELITIAN:
-${truncatedArticleText}
-
-TEMPLATE JURNAL RUJUKAN:
-${truncatedTemplateText || "Tidak ada (Draft-Only Mode)"}
-
-PRE-ANALISIS STRUKTUR & KEPATUHAN BERBASIS ATURAN LOCAL:
-${JSON.stringify({ structure, compliance }, null, 2)}
-
-Evaluasi naskah di atas dan berikan JSON.
-`
-
-    try {
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          response_format: { type: "json_object" },
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: userPrompt }
-          ]
-        })
-      })
-
-      if (!response.ok) {
-        throw new Error(`OpenAI API responded with status ${response.status}`)
+    // Map incoming AnalysisRequest data to ParsedDocument for compileUnifiedAIPrompt
+    const draftData: ParsedDocument = {
+      title: (request.config?.documentTitle as string) || "Untitled Document",
+      headings: (request.config?.headings as Heading[]) || [],
+      sections: (request.config?.sections as ParsedDocument["sections"]) || [],
+      paragraphs: (request.config?.paragraphs as ParsedDocument["paragraphs"]) || [],
+      rawText: request.articleText,
+      statistics: {
+        wordCount: request.articleText.split(/\s+/).length,
+        paragraphCount: (request.config?.paragraphs as ParsedDocument["paragraphs"])?.length || 0,
+        sectionCount: (request.config?.sections as ParsedDocument["sections"])?.length || 0,
+        headingCount: (request.config?.headings as Heading[])?.length || 0,
+        characterCount: request.articleText.length,
       }
-
-      const responseData = await response.json()
-      const content = responseData.choices?.[0]?.message?.content
-
-      if (!content) {
-        throw new Error("Empty response from OpenAI API.")
-      }
-
-      return this.parseJSONResponse(content)
-    } catch (err) {
-      console.error("OpenAI API request failed:", err)
-      throw err
     }
+
+    const promptText = compileUnifiedAIPrompt(draftData)
+    let lastError: Error | null = null
+
+    // Attempt models in sequence
+    for (const model of this.models) {
+      try {
+        console.log(`[OpenAI] Attempting academic review using model: ${model}`)
+        const startTime = Date.now()
+
+        // Fetch with 3 retries and a 20-second timeout per model call
+        const responseText = await this.fetchWithRetryAndTimeout(
+          baseUrl,
+          apiKey,
+          model,
+          promptText,
+          3,
+          20000
+        )
+
+        const duration = Date.now() - startTime
+        console.log(`[OpenAI] Successfully received response from ${model} in ${duration}ms`)
+
+        const aiAnalysisResult = this.parseAndValidateResponse(responseText)
+
+        // Structure response compatible with the legacy frontend as well as the new tabs
+        return {
+          score: aiAnalysisResult.overallScore,
+          structure: (request.config?.structure as StructureAnalysis | undefined)?.sections?.map((s) => ({
+            section: s.label,
+            status: s.status.toLowerCase() as "found" | "missing" | "incomplete",
+            feedback: s.status === "FOUND" ? "Terdeteksi dengan baik." : "Perlu perbaikan."
+          })) || [],
+          compliance: request.config?.compliance
+            ? {
+                score: (request.config.compliance as ComplianceResult).compliance,
+                missingSections: (request.config.compliance as ComplianceResult).missing,
+                wrongOrder: ((request.config.compliance as ComplianceResult).orderIssues || []).map((issue) => ({
+                  section: issue.section,
+                  expectedIndex: issue.expectedPosition - 1,
+                  actualIndex: issue.actualPosition - 1
+                })),
+                additionalSections: (request.config.compliance as ComplianceResult).extra
+              }
+            : {
+                score: 100,
+                missingSections: [],
+                wrongOrder: [],
+                additionalSections: []
+              },
+          language: aiAnalysisResult.languageReview.map(l => ({
+            word: l.finding.substring(0, 30),
+            type: l.severity === "high" ? ("non-standard" as const) : ("informal" as const),
+            suggestion: l.suggestedRevision,
+            context: l.exampleCorrection
+          })),
+          recommendations: aiAnalysisResult.recommendations,
+          aiAnalysis: aiAnalysisResult
+        }
+      } catch (error) {
+        console.warn(`[OpenAI Fallback] Model ${model} failed. Trying next model. Error:`, error)
+        lastError = error instanceof Error ? error : new Error(String(error))
+      }
+    }
+
+    throw new Error(`OpenAI analysis failed for all models in the chain. Last error: ${lastError?.message}`)
   }
 
-  private parseJSONResponse(text: string): AnalysisResponse {
+  private async fetchWithRetryAndTimeout(
+    baseUrl: string,
+    apiKey: string,
+    model: string,
+    prompt: string,
+    maxRetries: number,
+    timeoutMs: number
+  ): Promise<string> {
+    let attempts = 0
+    let delay = 1000
+
+    while (attempts < maxRetries) {
+      attempts++
+      try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
+
+        const response = await fetch(`${baseUrl}/chat/completions`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: model,
+            response_format: { type: "json_object" },
+            messages: [
+              { role: "system", content: SYSTEM_ROLE },
+              { role: "user", content: prompt }
+            ]
+          }),
+          signal: controller.signal
+        })
+
+        clearTimeout(timeoutId)
+
+        if (!response.ok) {
+          throw new Error(`HTTP Error ${response.status}: ${response.statusText}`)
+        }
+
+        const data = await response.json()
+        const content = data.choices?.[0]?.message?.content
+
+        if (!content) {
+          throw new Error("Empty completion content received from OpenAI API.")
+        }
+
+        // Logging tokens usage
+        if (data.usage) {
+          console.log(`[OpenAI Usage Logs] Provider: OpenAI | Model: ${model} | Prompt Tokens: ${data.usage.prompt_tokens} | Completion Tokens: ${data.usage.completion_tokens} | Total Tokens: ${data.usage.total_tokens}`)
+        }
+
+        return content
+      } catch (error) {
+        const err = error instanceof Error ? error : new Error(String(error))
+        const isAbort = err.name === "AbortError" || err.message?.includes("aborted")
+        console.warn(`[OpenAI Retry Log] Attempt ${attempts}/${maxRetries} failed for model ${model}. Error: ${err.message}`)
+
+        if (attempts >= maxRetries || isAbort) {
+          throw error
+        }
+
+        // Exponential backoff delay
+        await new Promise(resolve => setTimeout(resolve, delay))
+        delay *= 2
+      }
+    }
+
+    throw new Error("Max retries reached on OpenAI connection.")
+  }
+
+  private parseAndValidateResponse(text: string): AIAnalysisResult {
     try {
       let cleaned = text.trim()
+      
+      // Clean markdown code fence formatting if present
       if (cleaned.startsWith("```")) {
         cleaned = cleaned.replace(/^```json\s*/i, "").replace(/```$/, "").trim()
       }
 
+      // Isolate raw JSON block
       const jsonStart = cleaned.indexOf("{")
       const jsonEnd = cleaned.lastIndexOf("}")
 
@@ -105,10 +203,14 @@ Evaluasi naskah di atas dan berikan JSON.
         cleaned = cleaned.substring(jsonStart, jsonEnd + 1)
       }
 
-      return JSON.parse(cleaned) as AnalysisResponse
+      const parsedJson = JSON.parse(cleaned)
+
+      // Strict validation against Zod schema
+      const validatedData = AIAnalysisResultSchema.parse(parsedJson)
+      return validatedData
     } catch (err) {
-      console.error("Failed to parse JSON response from OpenAI:", text, err)
-      throw new Error("Gagal mengurai respon analisis dari OpenAI.")
+      console.error("[OpenAI Schema Validation Error] Failed to parse or validate JSON response:", err)
+      throw new Error("AI response structure failed strict JSON schema validation.")
     }
   }
 }

@@ -7,7 +7,7 @@ import { AnalysisRequest, AnalysisResponse } from "./types"
  */
 export async function runAIAnalysis(
   request: AnalysisRequest,
-  preferredProvider: string = "openrouter"
+  preferredProvider: string = "gemini"
 ): Promise<AnalysisResponse> {
   const activeProviders: string[] = []
 
@@ -26,7 +26,7 @@ export async function runAIAnalysis(
   }
 
   // 2. Add other configured API providers in standard priority hierarchy
-  const hierarchy = ["openrouter", "deepseek", "gemini", "openai"]
+  const hierarchy = ["gemini", "openrouter", "deepseek", "openai"]
   for (const provider of hierarchy) {
     if (keys[provider as keyof typeof keys] && !activeProviders.includes(provider)) {
       activeProviders.push(provider)
